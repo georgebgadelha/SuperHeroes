@@ -5,4 +5,7 @@
     <string name="title_notifications">Notifications</string>
     <string name="title_superheroes_list">Superheroes</string>
     <string name="title_settings">Settings</string>
+    <string name="AI_image_description">This image represents the SuperHeroes AI which will announce all news talking about the superheroes</string>
+    <string name="cardview_image_description">Background image of the cardview</string>
+    <string name="cardview_text_name">TEXT</string>
 </resources>

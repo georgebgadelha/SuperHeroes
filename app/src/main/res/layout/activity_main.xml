@@ -22,7 +22,7 @@
         android:layout_height="wrap_content"
         android:layout_margin="0dp"
         android:background="?android:attr/windowBackground"
-        android:backgroundTint="@color/superHTab"
+        android:backgroundTint="@color/midnight_blue"
         app:itemIconTint="@drawable/bottom_navigation_colors"
         app:itemTextColor="@drawable/bottom_navigation_colors"
         app:layout_constraintBottom_toBottomOf="parent"
