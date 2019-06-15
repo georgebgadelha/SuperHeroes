@@ -15,6 +15,11 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class MainActivity extends AppCompatActivity {
 
+    private FragmentHome fragmentHome;
+    private FragmentSuperheroes fragmentSuperheroes;
+    private FragmentSettings fragmentSettings;
+
+
     private BottomNavigationView.OnNavigationItemSelectedListener mOnNavigationItemSelectedListener
             = new BottomNavigationView.OnNavigationItemSelectedListener() {
 
@@ -24,15 +29,13 @@ public class MainActivity extends AppCompatActivity {
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
             switch (item.getItemId()) {
                 case R.id.navigation_home:
-                    selectedFragment = FragmentHome.newInstance();
-//                    TextView textView = findViewById(R.id.message);
-//                    textView.setText("CLIQUEI NO HOME");
+                    selectedFragment = fragmentHome;
                     break;
                 case R.id.navigation_superheroes_list:
-                    selectedFragment = FragmentSuperheroes.newInstance();
+                    selectedFragment = fragmentSuperheroes;
                     break;
                 case R.id.navigation_settings:
-                    selectedFragment = FragmentSettings.newInstance();
+                    selectedFragment = fragmentSettings;
                     break;
             }
             assert selectedFragment != null;
@@ -49,8 +52,14 @@ public class MainActivity extends AppCompatActivity {
         BottomNavigationView navView = findViewById(R.id.nav_view);
         navView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
 
+        fragmentHome = new FragmentHome(MainActivity.this);
+        fragmentSuperheroes = new FragmentSuperheroes(MainActivity.this);
+        fragmentSettings = new FragmentSettings();
+
+
+
         FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.replace(R.id.frame_layout, FragmentHome.newInstance());
+        transaction.replace(R.id.frame_layout, fragmentHome);
         transaction.commit();
 
 
